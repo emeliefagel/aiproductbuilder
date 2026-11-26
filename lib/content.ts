@@ -303,6 +303,108 @@ export const phases: Phase[] = [
     ],
     resources: [
       {
+        title: "Välj verktyg att bygga med",
+        blocks: [
+          {
+            type: "p",
+            text: "Det finns inget bästa verktyg, bara det som passar ditt bygge just nu. Många börjar i ett verktyg och flyttar vidare när produkten växer. Med koden på GitHub kan du byta när du vill.",
+          },
+          {
+            type: "table",
+            head: ["Verktyg", "Funkar bäst när", "Fördelar", "Nackdelar"],
+            rows: [
+              [
+                "**Lovable**",
+                "Du vill gå snabbt från idé till en klickbar prototyp, landningssida eller enkel app med inloggning och databas.",
+                "Inget kodande. Visuellt och snabbt. Inbyggd databas och publicering med ett klick. Synkar till GitHub.",
+                "Krediter tar slut snabbt vid felsökning. Svårare med komplex logik. Låst till en viss teknisk stack.",
+              ],
+              [
+                "**Replit**",
+                "Produkten behöver mer logik i bakgrunden: skript, automationer, API-kopplingar eller bottar.",
+                "Hel utvecklingsmiljö i webbläsaren. Många programspråk. Agent som bygger åt dig. Databas och hosting ingår.",
+                "Mer tekniskt gränssnitt. Kostnaden kan dra iväg med användning. Mindre fokus på design.",
+              ],
+              [
+                "**Claude** (Claude Code och Claude.ai)",
+                "Du vill bygga vidare på riktigt, jobba i ett GitHub-repo eller ta en prototyp till något stabilare. I Claude.ai kan du också snabbt göra små verktyg och sidor.",
+                "Starkt på kod, struktur och resonemang. Jobbar direkt i din kod på GitHub. Bra på granskning, förenkling och säkerhetsgenomgångar.",
+                "Kräver lite mer vana vid GitHub och filer. Publicering sköter du själv, till exempel via Vercel.",
+              ],
+              [
+                "**Codex** (OpenAI)",
+                "Koden ligger redan på GitHub och du vill lämna över avgränsade uppgifter eller få en andra åsikt.",
+                "Tar uppgifter och föreslår ändringar direkt i repot. Bra för granskning. Finns i ChatGPT som många redan använder.",
+                "Kräver ett GitHub-repo. Mindre visuellt. Hosting sköts separat.",
+              ],
+            ],
+          },
+          {
+            type: "p",
+            text: "**Tips:** Låt verktygen granska varandra. Bygg i ett verktyg och be ett annat att leta efter fel, förenklingar och säkerhetsrisker.",
+          },
+        ],
+      },
+      {
+        title: "Din AI-assistent: bollplank genom hela projektet",
+        blocks: [
+          {
+            type: "p",
+            text: "Ha en AI-assistent som du diskuterar projektet med, vid sidan av byggverktyget. Där kan du tänka högt, utmana idén och få hjälp när du fastnar.",
+          },
+          {
+            type: "list",
+            items: [
+              "Välj en du trivs med: **ChatGPT**, **Gemini**, **Claude** eller **Copilot**.",
+              "Skapa ett **projekt** i assistenten och samla allt där: PRD, anteckningar, testresultat, skärmbilder och feedback.",
+              "Be den formulera prompts till byggverktyget, sammanfatta användartester eller uppdatera din PRD.",
+              "Fastnar du? Klistra in felmeddelandet eller beskriv vad som händer och fråga vad nästa steg är.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "GitHub: din kod, oavsett verktyg",
+        blocks: [
+          {
+            type: "p",
+            text: "Skaffa ett konto på **GitHub** och spara koden i ett **privat repo**. Det fungerar oavsett om du bygger i Lovable, Replit, Claude eller Codex.",
+          },
+          {
+            type: "list",
+            items: [
+              "**Backup:** koden finns kvar även om du slutar använda ett verktyg.",
+              "**Historik:** du kan se vad som ändrats och gå tillbaka om något går sönder.",
+              "**Flytta och samarbeta:** byt verktyg, låt andra AI-verktyg granska koden eller lämna över till en utvecklare.",
+              "**Publicera:** tjänster som Vercel hämtar koden direkt från GitHub.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Vercel: publicera det du bygger med Claude",
+        blocks: [
+          {
+            type: "p",
+            text: "Bygger du i Claude eller Codex behöver du någonstans att publicera. **Vercel** kopplas till ditt GitHub-repo och lägger ut sidan på en egen adress.",
+          },
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Logga in på vercel.com med ditt GitHub-konto (gratisnivån räcker för att börja).",
+              "Klicka **Add New → Project** och välj ditt repo.",
+              "Lägg in hemligheter som lösenord och API-nycklar under **Environment Variables**, aldrig i koden.",
+              "Klicka **Deploy**. Varje gång koden uppdateras på GitHub publiceras en ny version automatiskt.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Lovable och Replit har egen publicering inbyggd, så där behövs inte Vercel.",
+          },
+        ],
+      },
+      {
         title: "UX när vi bygger med AI",
         by: "Karolina Meijer",
         blocks: [
@@ -370,23 +472,6 @@ export const phases: Phase[] = [
         ],
       },
       {
-        title: "Verktyg att bygga med",
-        blocks: [
-          {
-            type: "list",
-            items: ["Claude Code", "Lovable", "Replit", "Cursor", "Codex / ChatGPT"],
-          },
-          {
-            type: "p",
-            text: "Verktygen och gränssnitten förändras snabbt. Förmågan att identifiera ett behov, formulera vad som ska byggas, bedöma resultatet och testa verklig nytta är det som består.",
-          },
-          {
-            type: "p",
-            text: "**Skaffa ett konto på GitHub.** Oavsett om du bygger i Lovable, Claude Code eller något annat: synka koden mot ett privat repo. Då har du backup, och kan låta olika AI-verktyg granska varandra.",
-          },
-        ],
-      },
-      {
         title: "När ska man använda vad?",
         blocks: [
           {
@@ -408,6 +493,7 @@ export const phases: Phase[] = [
     ],
     checklist: [
       "Jag har valt verktyg",
+      "Jag har en AI-assistent med projektets filer samlade",
       "Jag har svarat på Vem, Vad och Varför",
       "Jag har listat vilket underlag och vilka tillgångar jag behöver",
       "Det viktigaste användarflödet fungerar från start till mål",
