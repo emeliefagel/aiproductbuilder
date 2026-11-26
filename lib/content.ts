@@ -707,3 +707,26 @@ export const navigate: Takeaway[] = [
 export function getPhase(slug: string) {
   return phases.find((p) => p.slug === slug);
 }
+
+export const COURSE_URL = "https://www.berghs.se/kurs/ai-product-builder-professional-dagtid/";
+
+export const course = {
+  lead: "AI har redan förändrat hur vi arbetar, som assistent, bollplank och i innehålls- och processarbete. AI Product Builder handlar om nästa steg: att gå från idé till produkt genom att bygga, testa och lansera egna tjänster och verktyg med AI.",
+  highlights: [
+    "Från idé till fungerande prototyp",
+    "Vibe coding i verktyg som Lovable, Replit och Claude Code",
+    "Mäta effekt och utveckla över tid",
+  ],
+  facts: [
+    ["Format", "Fyra heldagar på Berghs + Zoom-avstämningar på fredagar"],
+    ["Period", "10 november – 1 december 2026"],
+    ["Kursansvarig", "Emelie Fågelstedt"],
+    ["Gästföreläsare", "Tomas Seo, Anders Mellbratt, Karolina Meijer, Stefan Persson, Fredrik Jonsson"],
+  ],
+  weeks: [
+    ["Vecka 1", "Discover & Define", "En tydlig produktidé och en första PRD"],
+    ["Vecka 2", "Build", "En fungerande prototyp"],
+    ["Vecka 3", "Validate", "Användarfeedback och insikter"],
+    ["Vecka 4", "Launch & Grow", "Demo och en plan för nästa steg"],
+  ],
+};

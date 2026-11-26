@@ -34,7 +34,7 @@ export default function MyBuild({ phases }: { phases: Item[] }) {
 
   return (
     <section className="card mybuild">
-      <h2>Mitt bygge</h2>
+      <h2 className="display-sm">Mitt bygge</h2>
       <p className="muted">
         Använd sidan som ett verktyg varje gång du bygger något nytt. Ge produkten ett namn och bocka av stegen i varje
         fas.

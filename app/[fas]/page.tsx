@@ -77,9 +77,12 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
           <p className="eyebrow">
             Fas {index + 1} av {phases.length} · {phase.week}
           </p>
-          <h1>
-            <span aria-hidden>{phase.icon}</span> {phase.name}
-          </h1>
+          <div className="phase-title">
+            <span className="phase-icon" aria-hidden>
+              {phase.icon}
+            </span>
+            <h1 className="display">{phase.name}</h1>
+          </div>
           <p className="phase-q">{phase.question}</p>
           <p className="lead">{phase.intro}</p>
           <nav className="toc" aria-label="På sidan">
@@ -94,7 +97,7 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
 
       <div className="wrap phase-body">
         <section id="take-aways">
-          <h2>Take-aways</h2>
+          <h2 className="section-title">Take-aways</h2>
           <ul className="takeaways">
             {phase.takeaways.map((t, i) => (
               <li key={i} className="card">
@@ -107,7 +110,7 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
 
         <div className="two-col">
           <section id="steg" className="card">
-            <h2>Steg</h2>
+            <h2 className="section-title">Steg</h2>
             <ol className="steps">
               {phase.steps.map((s, i) => (
                 <li key={i}>
@@ -117,7 +120,7 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
             </ol>
           </section>
           <section id="uppgifter" className="card">
-            <h2>Enkla uppgifter</h2>
+            <h2 className="section-title">Enkla uppgifter</h2>
             <ul className="tasks">
               {phase.tasks.map((t, i) => (
                 <li key={i}>
@@ -129,7 +132,7 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
         </div>
 
         <section id="resurser">
-          <h2>Resurser</h2>
+          <h2 className="section-title">Resurser</h2>
           <div className="resources">
             {phase.resources.map((r, i) => (
               <details key={i} className="card resource" open={i === 0}>
@@ -148,17 +151,29 @@ export default async function PhasePage({ params }: { params: Promise<{ fas: str
         </section>
 
         <section id="checklista" className="card checklist-card">
-          <h2>Checklista</h2>
+          <h2 className="section-title">Checklista</h2>
           <Checklist slug={phase.slug} items={phase.checklist} />
         </section>
 
         <nav className="pager" aria-label="Nästa och föregående fas">
           {prev ? (
-            <Link href={`/${prev.slug}`}>← {prev.name}</Link>
+            <Link className="btn btn-ghost" href={`/${prev.slug}`}>
+              ← {prev.name}
+            </Link>
           ) : (
-            <Link href="/">← Översikt</Link>
+            <Link className="btn btn-ghost" href="/">
+              ← Översikt
+            </Link>
           )}
-          {next ? <Link href={`/${next.slug}`}>{next.name} →</Link> : <Link href="/">Översikt →</Link>}
+          {next ? (
+            <Link className="btn" href={`/${next.slug}`}>
+              {next.name} →
+            </Link>
+          ) : (
+            <Link className="btn" href="/">
+              Översikt →
+            </Link>
+          )}
         </nav>
       </div>
     </article>

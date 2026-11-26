@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Archivo } from "next/font/google";
 import Link from "next/link";
-import { phases } from "@/lib/content";
+import { COURSE_URL, phases } from "@/lib/content";
 import "./globals.css";
+
+const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" });
+
 
 export const metadata: Metadata = {
   title: "AI Product Builder",
@@ -11,11 +15,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv">
+    <html lang="sv" className={archivo.variable}>
       <body>
         <header className="site-header">
           <div className="wrap header-inner">
             <Link href="/" className="logo">
+              <span className="logo-at" aria-hidden>@</span>
               AI Product Builder
             </Link>
             <nav className="phase-nav" aria-label="Faser">
@@ -29,7 +34,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main>{children}</main>
         <footer className="site-footer">
-          <div className="wrap">AI Product Builder · Berghs School of Communication · 2026</div>
+          <div className="wrap footer-inner">
+            <span className="logo-at" aria-hidden>@</span>
+            <span>AI Product Builder · Berghs School of Communication · Hösten 2026</span>
+            <a href={COURSE_URL} target="_blank" rel="noopener noreferrer">
+              Kursen på berghs.se ↗
+            </a>
+          </div>
         </footer>
       </body>
     </html>
