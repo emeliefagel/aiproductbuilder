@@ -1,0 +1,10 @@
+export const AUTH_COOKIE = "apb_access";
+
+// Cookien innehåller en hash av lösenordet, aldrig lösenordet självt.
+export async function tokenFor(password: string) {
+  const data = new TextEncoder().encode(`aiproductbuilder:${password}`);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
