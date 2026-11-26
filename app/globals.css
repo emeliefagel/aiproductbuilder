@@ -13,7 +13,8 @@
   --validate: #ffb3c4;
   --grow: #a9d1ff;
   --radius: 4px;
-  --font: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Times New Roman", Times, "Liberation Serif", serif;
   color-scheme: light;
 }
 
@@ -42,29 +43,27 @@ a {
 h1,
 h2,
 h3 {
-  line-height: 1.1;
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
   margin: 0 0 0.5em;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  font-weight: 900;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
 }
 
 h2 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: 1.7rem;
 }
 
 .display,
 .display-sm,
 .section-title {
-  font-family: var(--font);
-  font-stretch: 75%;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.03em;
   line-height: 0.95;
 }
 
@@ -74,11 +73,11 @@ h2 {
 }
 
 .display-sm {
-  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-size: clamp(2.1rem, 4vw, 3rem);
 }
 
 .section-title {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
   margin-bottom: 18px;
 }
 
@@ -162,11 +161,10 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 900;
-  font-stretch: 75%;
-  text-transform: uppercase;
-  font-size: 1.15rem;
-  letter-spacing: 0.01em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -296,16 +294,14 @@ h2 {
 }
 
 .model-num {
-  font-weight: 900;
-  font-stretch: 75%;
-  font-size: 1.4rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
 }
 
 .model-name {
-  font-weight: 900;
-  font-stretch: 75%;
-  text-transform: uppercase;
-  font-size: 1.6rem;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
@@ -339,10 +335,9 @@ h2 {
   background: var(--black);
   color: var(--yellow);
   padding: 2px 10px;
-  text-transform: uppercase;
-  font-stretch: 75%;
-  font-weight: 900;
-  letter-spacing: 0.03em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.15rem;
 }
 
 /* Color helpers */
@@ -402,9 +397,9 @@ h2 {
   padding: 4px 14px;
   background: var(--yellow);
   color: var(--black);
-  text-transform: uppercase;
-  font-stretch: 75%;
-  font-weight: 900;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 
 .quotes {
@@ -685,8 +680,9 @@ h2 {
 }
 
 .phase-q {
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-  font-weight: 800;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.2;
   margin: 0 0 0.6rem;
 }
 
@@ -843,8 +839,9 @@ h2 {
 }
 
 .resource-title {
-  font-weight: 900;
-  font-size: 1.15rem;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
 }
 
 .resource summary .by {

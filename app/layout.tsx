@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
 import Link from "next/link";
 import { COURSE_URL, phases } from "@/lib/content";
 import "./globals.css";
-
-const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" });
 
 
 export const metadata: Metadata = {
@@ -15,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv" className={archivo.variable}>
+    <html lang="sv">
       <body>
         <header className="site-header">
           <div className="wrap header-inner">
