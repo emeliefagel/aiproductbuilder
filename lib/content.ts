@@ -5,7 +5,8 @@ export type Block =
   | { type: "p"; text: string }
   | { type: "list"; items: string[]; ordered?: boolean }
   | { type: "table"; head: string[]; rows: string[][] }
-  | { type: "copy"; label: string; text: string };
+  | { type: "copy"; label: string; text: string }
+  | { type: "download"; label: string; file: string; note?: string };
 
 export type Resource = {
   title: string;
@@ -382,6 +383,41 @@ export const phases: Phase[] = [
         ],
       },
       {
+        title: "Termer när du bygger med AI",
+        blocks: [
+          {
+            type: "p",
+            text: "Orden fungerar i flera verktyg, till exempel Claude Code, Codex och Replit. Även i Lovable möter du dem om projektet är kopplat till GitHub. Du kan skriva till AI:n på svenska.",
+          },
+          {
+            type: "table",
+            head: ["Ord", "Vad det betyder"],
+            rows: [
+              ["**Repo**", "Där projektets kod och versionshistorik finns."],
+              ["**Branch**", "En separat gren där du kan göra ändringar i koden."],
+              ["**Diff**", "En jämförelse som visar vad som lagts till, ändrats eller tagits bort."],
+              ["**Commit**", "En uppsättning ändringar sparad i Gits historik."],
+              ["**Push**", "Skicka commits till ett annat repo, till exempel på GitHub."],
+              ["**Pull request (PR)**", "Ett förslag att föra in ändringar från en branch i en annan, så att de kan granskas först."],
+              ["**Build**", "Steget som förbereder koden så att appen kan köras eller publiceras."],
+              ["**Deploy**", "Lägga ut en version av appen i en miljö där den kan köras."],
+              ["**Preview / production**", "Preview är en förhandsversion. Production är den skarpa miljön som användarna möter."],
+              ["**Rollback**", "Återställa en tidigare version i miljön där appen körs."],
+            ],
+          },
+          {
+            type: "p",
+            text: "**Kom ihåg:** commit sparar ändringarna i Git, push skickar dem till till exempel GitHub, och deploy gör en version tillgänglig. I vissa projekt startar en push automatiskt en deploy.",
+          },
+          {
+            type: "copy",
+            label: "Kopiera startprompten",
+            text: "Jag vill ändra [funktionen]. Visa först vad du planerar att ändra. När du är klar, sammanfatta ändringarna och visa hur jag kan testa dem. Om projektet använder Git, visa också diffen. Vänta med att pusha eller publicera tills jag har granskat ändringarna.",
+          },
+          { type: "download", label: "Termer – AI-bygge", file: "/material/termer-ai-bygge.pdf", note: "PDF · 2 sidor · med färdiga fraser att be AI:n om" },
+        ],
+      },
+      {
         title: "Vercel: publicera det du bygger med Claude",
         blocks: [
           {
@@ -469,6 +505,7 @@ export const phases: Phase[] = [
               ["Publicering & ansvar", "Var ska produkten finnas, vem får använda den och vem ansvarar för den?"],
             ],
           },
+          { type: "download", label: "Checklista över behov av underlag och tillgångar", file: "/material/checklista-underlag-och-tillgangar.pdf", note: "PDF · 3 sidor · inkl. säkerhet, integritet, test och publicering" },
         ],
       },
       {
@@ -573,6 +610,7 @@ export const phases: Phase[] = [
               "Skriv ner: Vad fungerade? Vad blev otydligt? Vad ändrar jag först?",
             ],
           },
+          { type: "download", label: "Användartest – Mitt första mätmål", file: "/material/anvandartest-ai-product-builder.pdf", note: "PDF · 2 sidor · fyll i under testet" },
         ],
       },
       {
@@ -625,7 +663,10 @@ export const phases: Phase[] = [
       {
         title: "Säkerhetsprompt",
         by: "Klistra in i ditt AI-verktyg",
-        blocks: [{ type: "copy", label: "Kopiera prompten", text: securityPrompt }],
+        blocks: [
+          { type: "copy", label: "Kopiera prompten", text: securityPrompt },
+          { type: "download", label: "Säkerhetsprompt att testa med din produkt", file: "/material/sakerhetsprompt.pdf", note: "PDF · 1 sida" },
+        ],
       },
     ],
     checklist: [
@@ -793,6 +834,13 @@ export const navigate: Takeaway[] = [
 export function getPhase(slug: string) {
   return phases.find((p) => p.slug === slug);
 }
+
+export const downloads = [
+  { label: "Användartest – Mitt första mätmål", file: "/material/anvandartest-ai-product-builder.pdf", phase: "Validate" },
+  { label: "Säkerhetsprompt att testa med din produkt", file: "/material/sakerhetsprompt.pdf", phase: "Validate" },
+  { label: "Checklista över behov av underlag och tillgångar", file: "/material/checklista-underlag-och-tillgangar.pdf", phase: "Build" },
+  { label: "Termer – AI-bygge", file: "/material/termer-ai-bygge.pdf", phase: "Build" },
+];
 
 export const COURSE_URL = "https://www.berghs.se/kurs/ai-product-builder-professional-dagtid/";
 

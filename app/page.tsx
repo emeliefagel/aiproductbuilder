@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MyBuild from "@/components/MyBuild";
 import Rich from "@/components/Rich";
-import { COURSE_URL, course, navigate, phases } from "@/lib/content";
+import { COURSE_URL, course, downloads, navigate, phases } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -67,6 +67,26 @@ export default function Home() {
             ))}
           </ul>
         </section>
+      </section>
+
+      <section className="wrap material" id="material">
+        <p className="eyebrow">Material</p>
+        <h2 className="display-sm">Ladda ner och använd</h2>
+        <ul className="download-grid">
+          {downloads.map((d) => (
+            <li key={d.file}>
+              <a className="download" href={d.file} download>
+                <span className="download-icon" aria-hidden>
+                  ↓
+                </span>
+                <span>
+                  <span className="download-label">{d.label}</span>
+                  <span className="download-note">PDF · {d.phase}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="wrap about" id="om-kursen">

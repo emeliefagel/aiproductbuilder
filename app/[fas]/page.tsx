@@ -58,6 +58,18 @@ function BlockView({ block }: { block: Block }) {
       );
     case "copy":
       return <CopyBlock label={block.label} text={block.text} />;
+    case "download":
+      return (
+        <a className="download" href={block.file} download>
+          <span className="download-icon" aria-hidden>
+            ↓
+          </span>
+          <span>
+            <span className="download-label">Ladda ner: {block.label}</span>
+            {block.note && <span className="download-note">{block.note}</span>}
+          </span>
+        </a>
+      );
   }
 }
 
