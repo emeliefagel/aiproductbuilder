@@ -855,7 +855,7 @@ export const course = {
     ["Format", "Fyra heldagar på Berghs + Zoom-avstämningar på fredagar"],
     ["Period", "10 november – 1 december 2026"],
     ["Kursansvarig", "Emelie Fågelstedt"],
-    ["Gästföreläsare", "Tomas Seo, Anders Mellbratt, Karolina Meijer, Stefan Persson, Fredrik Jonsson"],
+    ["Gästföreläsare", "Tomas Seo, Anders Mellbratt, Karolina Meijer, Stefan Persson, Fredrik Jonsson, Amalia Berglöf"],
   ],
   weeks: [
     ["Vecka 1", "Discover & Define", "En tydlig produktidé och en första PRD"],
