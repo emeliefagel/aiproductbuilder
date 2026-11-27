@@ -1083,3 +1083,13 @@ tr:last-child td {
   margin: 0;
   height: 100%;
 }
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.site-footer .logo-img {
+  height: 28px;
+}

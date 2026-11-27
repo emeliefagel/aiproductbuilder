@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="wrap header-inner">
             <Link href="/" className="logo">
-              <span className="logo-at" aria-hidden>@</span>
+              <img src="/logo.png" alt="" width={251} height={361} className="logo-img" />
               AI Product Builder
             </Link>
             <nav className="phase-nav" aria-label="Faser">
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <footer className="site-footer">
           <div className="wrap footer-inner">
-            <span className="logo-at" aria-hidden>@</span>
+            <img src="/logo.png" alt="" width={251} height={361} className="logo-img" />
             <span>AI Product Builder · Berghs School of Communication · Hösten 2026</span>
             <a href={COURSE_URL} target="_blank" rel="noopener noreferrer">
               Kursen på berghs.se ↗
