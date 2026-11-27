@@ -1085,9 +1085,10 @@ tr:last-child td {
 }
 
 .logo-img {
-  height: 40px;
-  width: auto;
+  height: 34px;
+  width: 34px;
   display: block;
+  color: var(--white);
 }
 
 .site-footer .logo-img {
